@@ -1,0 +1,12 @@
+from IPython.display import HTML, display
+def makefigure(layers, label=''):
+    html = "<table><tr>"
+    for i in layers:
+        rasterlist = !g.list raster
+        if i in rasterlist:
+            !r.out.png -t -w input={i} output={i}.png --o
+        else:
+            !v.out.png input={i} output={i}.png
+        html += "<td><img src='%s.png' width='600'></td>" % i
+    html += "</tr></table><p>%s</p>" % label
+    display(HTML(html))
