@@ -9,7 +9,7 @@ USER root
 RUN rm -rf /var/lib/apt/lists/* -vf
 RUN apt-get clean
 RUN  apt-get update
-RUN apt-get upgrade
+RUN apt-get upgrade -y
 
 
 RUN apt-get clean && apt-get update && \
