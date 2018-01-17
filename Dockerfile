@@ -99,6 +99,7 @@ ENV PYTHONPATH /usr/lib/grass72/etc/python:$PYTHONPATH
 RUN mkdir /home/epinux/.grass7
 #ADD GRASS/rc /home/epinux/.grass7/rc
 ADD GRASS /home/epinux/.grass7
+ADD geosciences-250279.ipynb /home/epinux/work/
 
 USER root
 RUN apt-get -y install unzip
