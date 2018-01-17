@@ -114,6 +114,7 @@ unzip grassdata.zip && \
 rm -rf grassdata.zip && mv /home/epinux/work/home/epinux/grassdata /home/epinux/ && rm -rf /home/epinux/work/home/epinux/
 RUN chmod a+x /usr/lib/grass72/bin && chmod a+x /usr/lib/grass72/bin/r.out.png
 RUN chown -R epinux /home/epinux
+RUN chmod -R 777 /home/epinux/work/data
 RUN updatedb
 
 USER epinux
