@@ -6,7 +6,7 @@ USER root
 
 #ADD cdn.debian.net_debian_dists_sid_contrib_source_Sources.gz /var/lib/apt/lists/
 
-RUN rm /var/lib/apt/lists/* -vf
+RUN rm -rf /var/lib/apt/lists/* -vf
 RUN apt-get clean
 RUN  apt-get update
 RUN apt-get upgrade
