@@ -1,0 +1,90 @@
+.TH v.out.png 1 "" "GRASS 7.2.2" "Grass User's Manual"
+.SH NAME
+\fI\fBv.out.png\fR\fR  \- Export vector map as PNG
+.SH KEYWORDS
+vector, export, PNG
+.SH SYNOPSIS
+\fBv.out.png\fR
+.br
+\fBv.out.png \-\-help\fR
+.br
+\fBv.out.png\fR \fBinput\fR=\fIname\fR \fBoutput\fR=\fIname\fR  [\fBrgb_column\fR=\fIstring\fR]   [\fBcompression\fR=\fIinteger\fR]   [\fBwidth\fR=\fIinteger\fR]   [\fBheight\fR=\fIinteger\fR]   [\-\-\fBoverwrite\fR]  [\-\-\fBhelp\fR]  [\-\-\fBverbose\fR]  [\-\-\fBquiet\fR]  [\-\-\fBui\fR]
+.SS Flags:
+.IP "\fB\-\-overwrite\fR" 4m
+.br
+Allow output files to overwrite existing files
+.IP "\fB\-\-help\fR" 4m
+.br
+Print usage summary
+.IP "\fB\-\-verbose\fR" 4m
+.br
+Verbose module output
+.IP "\fB\-\-quiet\fR" 4m
+.br
+Quiet module output
+.IP "\fB\-\-ui\fR" 4m
+.br
+Force launching GUI dialog
+.SS Parameters:
+.IP "\fBinput\fR=\fIname\fR \fB[required]\fR" 4m
+.br
+Name of input vector map
+.br
+Or data source for direct OGR access
+.IP "\fBoutput\fR=\fIname\fR \fB[required]\fR" 4m
+.br
+Name for new PNG file
+.br
+Name for output file
+.IP "\fBrgb_column\fR=\fIstring\fR" 4m
+.br
+Name of color definition column
+.IP "\fBcompression\fR=\fIinteger\fR" 4m
+.br
+Compression level of PNG file
+.br
+(0 = none, 1 = fastest, 9 = best)
+.br
+Options: \fI0\-9\fR
+.br
+Default: \fI6\fR
+.IP "\fBwidth\fR=\fIinteger\fR" 4m
+.br
+Width of PNG file
+.br
+Default: \fI640\fR
+.IP "\fBheight\fR=\fIinteger\fR" 4m
+.br
+Height of PNG file
+.br
+Default: \fI480\fR
+.SH DESCRIPTION
+\fIv.out.png\fR exports a GRASS vector map in non\-georeferenced PNG image
+format, respecting the current region resolution and bounds.
+By default it look for a color table, set using v.colors
+you can also set the attribute table where read the feature color.
+.SH SEE ALSO
+\fI
+r.out.png,
+v.colors,
+r.out.tiff,
+r.out.ascii,
+r.in.png
+\fR
+.SH AUTHORS
+Luca Delucchi
+.br
+.SH SOURCE CODE
+.PP
+Available at: v.out.png source code (history)
+.PP
+Main index |
+Vector index |
+Topics index |
+Keywords index |
+Graphical index |
+Full index
+.PP
+© 2003\-2017
+GRASS Development Team,
+GRASS GIS 7.2.2 Reference Manual

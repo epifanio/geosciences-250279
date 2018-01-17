@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task SYSTEM "grass-addons.dtd">
+<addons version="7">
+    <task name="r.area">
+        <description>Calculates area of clumped areas and remove areas smaller than given threshold.</description>
+        <keywords>raster,statistics,area</keywords>
+        <binary>
+            <file>/home/epinux/.grass7/addons/docs/man/man1/man1/r.area.1</file>
+            <file>/home/epinux/.grass7/addons/docs/html/r.area.html</file>
+            <file>/home/epinux/.grass7/addons/bin/r.area</file>
+        </binary>
+        <libgis revision="70617" />
+    </task>
+    <task name="r.geomorphon">
+        <description>Calculates geomorphons (terrain forms) and associated geometry using machine vision approach.</description>
+        <keywords>raster,geomorphons,terrain patterns,machine vision geomorphometry</keywords>
+        <binary>
+            <file>/home/epinux/.grass7/addons/docs/man/man1/man1/r.geomorphon.1</file>
+            <file>/home/epinux/.grass7/addons/docs/html/r.geomorphon.html</file>
+            <file>/home/epinux/.grass7/addons/docs/html/geomorphon.png</file>
+            <file>/home/epinux/.grass7/addons/docs/html/r_geomorphon_summits.png</file>
+            <file>/home/epinux/.grass7/addons/docs/html/legend.png</file>
+            <file>/home/epinux/.grass7/addons/docs/html/r_geomorphon.png</file>
+            <file>/home/epinux/.grass7/addons/bin/r.geomorphon</file>
+        </binary>
+        <libgis revision="70617" />
+    </task>
+    <task name="v.transects">
+        <description>Creates transect lines or quadrilateral areas at regular intervals perpendicular to a polyline.</description>
+        <keywords>vector,transect</keywords>
+        <binary>
+            <file>/home/epinux/.grass7/addons/scripts/v.transects</file>
+            <file>/home/epinux/.grass7/addons/docs/man/man1/man1/v.transects.1</file>
+            <file>/home/epinux/.grass7/addons/docs/html/vtransect_options2.jpg</file>
+            <file>/home/epinux/.grass7/addons/docs/html/vtransect_options1.jpg</file>
+            <file>/home/epinux/.grass7/addons/docs/html/v.transects.html</file>
+        </binary>
+        <libgis revision="70617" />
+    </task>
+    <task name="v.out.png">
+        <description>Export vector map as PNG</description>
+        <keywords>vector,export,PNG</keywords>
+        <binary>
+            <file>/home/epinux/.grass7/addons/scripts/v.out.png</file>
+            <file>/home/epinux/.grass7/addons/docs/man/man1/man1/v.out.png.1</file>
+            <file>/home/epinux/.grass7/addons/docs/html/v.out.png.html</file>
+        </binary>
+        <libgis revision="70617" />
+    </task>
+</addons>
