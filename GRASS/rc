@@ -1,8 +1,0 @@
-GISDBASE: /home/epinux/grassdata
-LOCATION_NAME: UTM19N
-GRASS_VERBOSE: '-1'
-GUI: text
-DEBUG: 0
-GRASS_ADDON_BASE: /home/epinux/.grass7/addons
-MAPSET: PERMANENT
-GISBASE: /usr/lib/grass72
