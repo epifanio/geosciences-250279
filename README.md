@@ -4,4 +4,4 @@
 # geosciences-250279
 Code to partially reproduce the results of geosciences-250279 paper.
 
-## [Notebook outputs on nbviewer](http://nbviewer.jupyter.org/github/epifanio/geosciences-250279/blob/master/geosciences-250279.ipynb)
+## [Notebook outputs on nbviewer](https://gist.github.com/epifanio/1ec46faa0ee6c1bcae21682f3c4d6c93)
