@@ -5,3 +5,5 @@
 Code to partially reproduce the results of geosciences-250279 paper.
 
 ## [Rendered Notebook](http://nbviewer.jupyter.org/gist/epifanio/1ec46faa0ee6c1bcae21682f3c4d6c93)
+
+![shareit](https://nextcloud.epinux.com/index.php/s/W9MLgmkmGxji75Z/download)
