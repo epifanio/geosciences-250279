@@ -20,7 +20,7 @@ from ipyleaflet import (
     DrawControl
 )
 
-from IPython.display import display
+from IPython.display import display, HTML
 from IPython.display import clear_output
 from ipywidgets import interact, interactive, fixed
 from ipywidgets import widgets
@@ -330,7 +330,7 @@ class Grass2Leaflet(object):
                                  bounds=(self.grassimg[i]['LL'], self.grassimg[i]['UR']))
             self.leafletimg[i] = layer
 
-    def render(self, draw_control=None):
+    def render(self, draw_control=None, caption=None):
         self.out = widgets.Output()
         self.imgoverlays()
         self.dc = None
@@ -349,15 +349,19 @@ class Grass2Leaflet(object):
             self.dc.on_draw(handle_draw)
             self.m.add_control(self.dc)
         display(self.m)
-        self.setgisdb = widgets.Button(
-            description='Select',
+        self.lastdraw = widgets.Button(
+            description='Print last draw',
             disabled=False,
             button_style='', # 'success', 'info', 'warning', 'danger' or ''
-            tooltip='Set GRASS LOCATION & MAPSET',
+            tooltip='Print last draw',
             #icon='check'
             ) 
-        self.setgisdb.on_click(self.on_button_clicked1)
-        display(widgets.HBox([self.setgisdb, self.out]))
+        self.lastdraw.on_click(self.on_button_clicked1)
+        if not draw_control:
+            self.lastdraw.disabled = True
+        display(widgets.HBox([self.lastdraw, self.out]))
+        if caption:
+            display(HTML("<center><b>Figure %s:</b> %s</center>" % (caption[0], caption[1])))
         return {'map': self.m, 'drawer': self.dc}
 
     def on_value_change(self, layername):
