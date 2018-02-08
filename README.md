@@ -1,4 +1,4 @@
-[![DOI](https://zenodo.org/badge/117629063.svg)](https://zenodo.org/badge/latestdoi/117629063) [![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/epifanio/geosciences-250279/master?filepath=geosciences-250279.ipynb)
+[![DOI](https://zenodo.org/badge/117629063.svg)](https://zenodo.org/badge/latestdoi/117629063) [![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v3/gh/epifanio/geosciences-250279/master?filepath=geosciences-250279.ipynb)
 
 ## An Automatic Procedure for the Quantitative Characterization of Submarine Bedforms
 Code to reproduce the [GRM results](http://nbviewer.jupyter.org/urls/nextcloud.epinux.com/index.php/s/WueZ9KgEN0HejNK/download) published in [geosciences-250279](http://www.mdpi.com/2076-3263/8/1/28/htm).
