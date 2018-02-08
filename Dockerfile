@@ -5,6 +5,10 @@ MAINTAINER Massimo Di Stefano  <epiesasha@me.com>
 USER epinux
 
 ADD geosciences-250279.ipynb /home/epinux/work/
+#ADD geosciences-250279-binder-dev.ipynb /home/epinux/work/
+COPY ipygrass/ /home/epinux/work/ipygrass/
+RUN mkdir /home/epinux/work/tmp
+ENV PYTHONPATH /home/epinux/work/ipygrass:$PYTHONPATH
 
 USER root
 RUN wget http://epinux.com/epinux_data/grassdata.zip && \
