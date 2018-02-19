@@ -7,6 +7,7 @@ USER epinux
 ADD geosciences-250279.ipynb /home/epinux/work/
 
 USER root
+RUN apt-get update && apt-get -y upgrade
 RUN wget http://epinux.com/epinux_data/grassdata.zip && \
 unzip grassdata.zip && \
 rm -rf grassdata.zip && mv /home/epinux/work/home/epinux/grassdata /home/epinux/ && rm -rf /home/epinux/work/home/epinux/
