@@ -16,6 +16,7 @@ unzip grassdata.zip && \
 rm -rf grassdata.zip && mv /home/epinux/work/home/epinux/grassdata /home/epinux/ && rm -rf /home/epinux/work/home/epinux/
 RUN chown -R epinux /home/epinux
 RUN chmod -R 777 /home/epinux/work/data
+RUN apt-get update && apt-get install python3-geographiclib
 RUN updatedb
 
 USER epinux
