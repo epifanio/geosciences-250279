@@ -2,7 +2,7 @@
 
 # exit on error
 set -e
-
+git clone https://github.com/OSGeo/grass .
 # compile
 ./configure \
     --enable-largefile=yes \
