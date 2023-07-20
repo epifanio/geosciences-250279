@@ -18,14 +18,17 @@ cd $HOME/grass
     --with-opengl-libs=/usr/include/GL \
     --without-pdal \
     --with-freetype=yes --with-freetype-includes="/usr/include/freetype2/" \
-    --with-sqlite=yes
+    --with-sqlite=yes \
+    --prefix=/home/jovyan/grass
 make
+make install
 
 # put command on path
 # ensure the user specific bin dir exists (already on path)
-mkdir -p $HOME/.local/bin/
+# mkdir -p $HOME/.local/bin/
 # create link to build
-ln -s $HOME/bin.*/grass* $HOME/.local/bin/grass
+# ln -s $HOME/bin.*/grass* $HOME/.local/bin/grass
+export PATH=/home/jovyan/grass/bin:$PATH
 
 # download a sample dataset
 mkdir -p data/grassdata \
