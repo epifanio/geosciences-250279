@@ -16,6 +16,7 @@ cd $HOME/grass
     --with-geos=/usr/bin/geos-config \
     --with-cairo \
     --with-opengl-libs=/usr/include/GL \
+    --without-pdal \
     --with-freetype=yes --with-freetype-includes="/usr/include/freetype2/" \
     --with-sqlite=yes
 make
