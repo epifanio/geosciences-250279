@@ -29,6 +29,9 @@ make install
 # create link to build
 # ln -s $HOME/bin.*/grass* $HOME/.local/bin/grass
 export PATH=/home/jovyan/grass/bin:$PATH
+export GRASSBIN=/home/jovyan/grass/bin
+export PYTHONPATH=/home/jovyan/grass/etc/python:$PYTHONPATH
+
 
 # download a sample dataset
 mkdir -p data/grassdata \
