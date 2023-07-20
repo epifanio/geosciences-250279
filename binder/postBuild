@@ -2,8 +2,9 @@
 
 # exit on error
 set -e
-git clone https://github.com/OSGeo/grass .
+git clone https://github.com/OSGeo/grass /grass
 # compile
+cd /grass
 ./configure \
     --enable-largefile=yes \
     --with-nls \
