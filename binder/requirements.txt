@@ -1,8 +1,1 @@
-folium
-matplotlib
-numpy
-Pillow
-ply
-PyVirtualDisplay
-grass-session
 python-dotenv
