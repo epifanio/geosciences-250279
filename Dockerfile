@@ -18,9 +18,9 @@ ENV GRANT_SUDO=yes
 
 #ADD geosciences-250279.ipynb /root/home/work/
 #ADD geosciences-250279-binder-dev.ipynb /home/epinux/work/
-#COPY ipygrass/ /home/epinux/work/ipygrass/
-#RUN mkdir /home/epinux/work/tmp
-#ENV PYTHONPATH /home/epinux/work/ipygrass:$PYTHONPATH
+RUN mkdir -p /home/epinux/work/tmp
+COPY ipygrass/ /home/jovyan/work/ipygrass/
+ENV PYTHONPATH /home/jovyan/work/ipygrass:$PYTHONPATH
 
 #USER root
 # RUN wget https://epinux.com/index.php/s/MCsgoGzC2LCZ9PJ/download -O grassdata.zip
