@@ -5,3 +5,4 @@ Pillow
 ply
 PyVirtualDisplay
 grass-session
+python-dotenv
