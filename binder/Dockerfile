@@ -1,6 +1,10 @@
 FROM epinux/mbio_lab
 
-ENV DEBIAN_FRONTEND noninteractive
+USER root
+RUN apt-get autoremove -y
+RUN apt-get clean -y
+
+USER jovyan
 
 # define versions to be used (PDAL is not available on Ubuntu/Debian, so we compile it here)
 # https://github.com/PDAL/PDAL/releases
