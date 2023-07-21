@@ -12,12 +12,6 @@ ENV GRASS_SKIP_MAPSET_OWNER_CHECK 1
 # https://proj.org/usage/environmentvars.html#envvar-PROJ_NETWORK
 ENV PROJ_NETWORK=ON
 
-
-
-# Reduce the image size
-RUN apt-get autoremove -y
-RUN apt-get clean -y
-
 ENV NB_DIR=/home/jovyan/notebooks
 ENV JUPYTER_ENABLE_LAB=yes
 ENV GRANT_SUDO=yes
