@@ -151,9 +151,9 @@ class General(object):
         command = grass.read_command(*args, **kwargs)
 
         if std:
-            command = command.decode().strip().split('\n')
+            command = command.strip().split('\n')
             return command
-        env = command.decode().strip().replace("'", '').replace(";", "")
+        env = command.strip().replace("'", '').replace(";", "")
         if env.count('\n') >= 2:
             env = env.split('\n')
         else:
@@ -212,7 +212,7 @@ class General(object):
         return self.string2list(grass.read_command('g.list', type=type))
     
     def list2dict(self, command, sep='=', sort=True, dict=True):
-        env = command.decode().strip().replace("'", '').replace(";", "")
+        env = command.strip().replace("'", '').replace(";", "")
         if env.count('\n') >= 2:
             env = env.split('\n')
         else:
@@ -225,7 +225,7 @@ class General(object):
             return [(x.split(sep)[0].strip(), str(x.split(sep)[1].strip())) for x in env]
     
     def string2list(self, command):
-        return command.decode().strip().split("\n")
+        return command.strip().split("\n")
     
     def grasslayercheck(self, layer, type='raster', verbose=False):
         grasslayers = self.glist(type=type)
@@ -350,7 +350,7 @@ class Raster(object):
                                input=layer, 
                                coordinates=coordinates, 
                                resolution=resolution, 
-                               flags='g').decode().strip().split('\n')
+                               flags='g').strip().split('\n')
         return p
         
         
@@ -409,7 +409,7 @@ class Raster(object):
         
     def cellsize(self, map):
         if General().grasslayercheck(map):
-            nsew_res = grass.read_command('g.region', raster=map, flags='m').decode().strip().split('\n')[6:8]
+            nsew_res = grass.read_command('g.region', raster=map, flags='m').strip().split('\n')[6:8]
             return np.mean([float(i.split('=')[1]) for i in nsew_res])
         else:
             print('input map %s not found' % map)
@@ -443,7 +443,7 @@ class Raster(object):
                                    sep='space',
                                    nv='*',
                                    nsteps='255',
-                                   flags='inc').decode().split('\n')[:-1]
+                                   flags='inc').split('\n')[:-1]
 
         res = self.cellsize(grasslayer)
 
@@ -544,7 +544,7 @@ class Raster(object):
                                    sep='space', 
                                    nv='*', 
                                    nsteps='255', 
-                                   flags='Anc').decode().split('\n')[:-1]
+                                   flags='Anc').split('\n')[:-1]
 
         res = self.cellsize(grasslayer)
 
@@ -661,7 +661,7 @@ class Raster(object):
         if all(General().grasslayercheck(layer) for layer in layers):
             result=OrderedDict()
             # for i[0].strip() in grass.read_command('r.category', map=cover).decode().strip().replace('\t',' ').split('\n'):
-            for i in [j.split(' ')[0].strip() for j in grass.read_command('r.category', map=cover).decode().strip().replace('\t', ' ').split('\n')]:
+            for i in [j.split(' ')[0].strip() for j in grass.read_command('r.category', map=cover).strip().replace('\t', ' ').split('\n')]:
                 if not output:
                     outputname=base+'_'+i
                 else:
@@ -904,8 +904,8 @@ class Raster(object):
                               overwrite=True)
             print("longc done")
             vrange = grass.read_command('r.info', map=xslope, flags='r')
-            if sys.version_info.major >= 3:
-                vrange = vrange.decode()
+            #if sys.version_info.major >= 3:
+            #    vrange = vrange.decode()
             vmin = vrange.strip().split('\n')[0].split('=')[1]
             vmax = vrange.strip().split('\n')[1].split('=')[1]
             grass.run_command('r.mapcalc', expression='%s = (%s/%s)' % (xslope, xslope, vmax), overwrite=True)
