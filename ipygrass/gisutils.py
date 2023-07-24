@@ -1,7 +1,7 @@
 import re
 import collections
 from osgeo import gdal, osr
-from episg import *
+from ipygrass.episg import *
 from itertools import zip_longest
 import numpy as np
 
