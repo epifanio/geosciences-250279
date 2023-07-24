@@ -1,5 +1,5 @@
 from __future__ import print_function 
-from episg import *
+from ipygrass.episg import *
 import grass.script as grass
 from collections import OrderedDict
 import uuid
@@ -20,7 +20,7 @@ from spectral import *
 import spectral.io.envi as envi
 spectral.settings.show_progress = False
 import warnings
-from gisutils import grouper
+from ipygrass.gisutils import grouper
 
 def atoi(text):
     return int(text) if text.isdigit() else text
