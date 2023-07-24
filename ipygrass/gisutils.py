@@ -55,7 +55,7 @@ class DictTable(collections.OrderedDict):
     
     
 def string2list(command):
-    return command.decode().strip().split("\n")
+    return command.strip().split("\n")
 
 def list2table(env, sep, sort=True):
     env = list(env)
@@ -64,7 +64,7 @@ def list2table(env, sep, sort=True):
     return DictTable(collections.OrderedDict((x.split(sep)[0].strip(), str(x.split(sep)[1].strip())) for x in env))
 
 def list2dict(command, sep='=', sort=True, ):
-    env = command.decode().strip().replace("'", '').replace(";", "")
+    env = command.strip().replace("'", '').replace(";", "")
     if env.count('\n') >= 2:
         env = env.split('\n')
     else:
