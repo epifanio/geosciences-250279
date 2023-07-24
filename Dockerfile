@@ -1,9 +1,8 @@
 FROM epinux/mbio_lab
 
 ENV DEBIAN_FRONTEND noninteractive
-
-# define versions to be used (PDAL is not available on Ubuntu/Debian, so we compile it here)
-# https://github.com/PDAL/PDAL/releases
+ENV PYTHONPATH=/usr/local/grass84/etc/python/:/home/jovyan/work/P1/ipygrass/:$PYTHONPATH
+ENV GRASSBIN=/usr/local/bin/grass
 
 ENV SHELL /bin/bash
 ENV LC_ALL "en_US.UTF-8"
@@ -14,18 +13,11 @@ ENV PROJ_NETWORK=ON
 
 ENV NB_DIR=/home/jovyan/notebooks
 ENV JUPYTER_ENABLE_LAB=yes
-ENV GRANT_SUDO=yes
+# ENV GRANT_SUDO=yes
 
-#ADD geosciences-250279.ipynb /root/home/work/
-#ADD geosciences-250279-binder-dev.ipynb /home/epinux/work/
-RUN mkdir -p /home/epinux/work/tmp
-COPY ipygrass/ /home/jovyan/work/ipygrass/
-ENV PYTHONPATH /home/jovyan/work/ipygrass:$PYTHONPATH
+USER root
+RUN conda install -y -c conda-forge ipyleaflet
+RUN pip install geographiclib
+RUN pip install spectral
 
-#USER root
-# RUN wget https://epinux.com/index.php/s/MCsgoGzC2LCZ9PJ/download -O grassdata.zip
-#RUN chown -R epinux /home/epinux
-#RUN chmod -R 777 /home/epinux/work/data
-#RUN apt-get update && apt-get install python3-geographiclib
-#RUN updatedb
-
+USER jovyan
