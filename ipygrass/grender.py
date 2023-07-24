@@ -62,7 +62,7 @@ class Grass2vector(object):
             return ogr2ogr        
 
     def grasslayercheck(self, layer):
-        grasslayers = grass.read_command('g.list', type='vector').decode().strip().split('\n')
+        grasslayers = grass.read_command('g.list', type='vector').strip().split('\n')
         if layer not in grasslayers:
             print("grass layer: %s not found" % i)
             return False
@@ -135,7 +135,7 @@ class Grass2img(object):
             return gdaldem
 
     def grasslayercheck(self, layer):
-        grasslayers = grass.read_command('g.list', type='raster').decode().strip().split('\n')
+        grasslayers = grass.read_command('g.list', type='raster').strip().split('\n')
         # !g.list raster
         if layer not in grasslayers:
             print("grass layer: %s not found" % i)
@@ -395,7 +395,7 @@ def makefigure(layers, output='', caption=None, legend=False, clean=True, embed=
         if not output:
             output = uuid.uuid1()
         outname=str(output)+i+'.png'
-        rasterlist = grass.read_command('g.list', type='raster').decode().strip().split('\n')
+        rasterlist = grass.read_command('g.list', type='raster').strip().split('\n')
         if i in rasterlist:
             grass.run_command('r.out.png', input=i, output=outname, flags='t', overwrite=True)
         else:
